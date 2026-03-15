@@ -38,6 +38,7 @@ I came up with a set of test cases that I can test in both pytest and the actual
 - What change did you make that finally gave the game a stable secret number?
 
 ---
+The secret number was not stored between states using session state, so in instances where a new state was created, for example when the difficulty was switched, the secret was regenerated. Every time the user interacts with the app, the entire app's script is rerun entirely, and the variables reset, therefore this was causing our problem. Session state allows for variables to persist between reruns by using a dictionary to store variables that we want to keep consistent. I stored the secret number within this session state dictionary in order for the secret to persist. 
 
 ## 5. Looking ahead: your developer habits
 
@@ -45,3 +46,5 @@ I came up with a set of test cases that I can test in both pytest and the actual
   - This could be a testing habit, a prompting strategy, or a way you used Git.
 - What is one thing you would do differently next time you work with AI on a coding task?
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+
+In the future I want to keep using AI to help understand libraries that I have not previously worked with as this helped the debugging process. I think next time I would ask for test cases that I can run manually immediately after implementing a new solution, since I feel that this time I manually tested on my own and only later on decided to have the AI generate test cases that I can run manually in the app. This project changed my perspective in the sense that the AI genuinely felt like a companion, and by leveraging it to build my understanding I was able to also proofread the code later on to verify changes. 

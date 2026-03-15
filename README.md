@@ -25,13 +25,23 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+- [x] **Describe the game's purpose:** A number guessing game where the player tries to guess a randomly chosen secret number, receiving higher/lower hints until they guess correctly.
+
+- [x] **Detail which bugs you found:**
+  1. The secret number reset on every button click because it wasn't stored in `session_state`.
+  2. Invalid guesses still counted as an attempt because the increment wasn't inside the valid-guess block.
+  3. The secret was converted to a string before comparison, so guesses never matched.
+
+- [x] **Explain what fixes you applied:**
+  1. Initialized the secret once using `if "secret" not in st.session_state`, so it persists across reruns.
+  2. Moved `attempts += 1` inside the `else` block so only valid guesses consume an attempt.
+  3. Removed the `str()` conversion and compared `guess_int` directly to the integer secret.
+
 
 ## 📸 Demo
 
-- [ ] [Insert a screenshot of your fixed, winning game here]
+- [ ] [![Alt text]("C:\Users\19092\Pictures\Screenshots\Screenshot 2026-03-14 222002.png")
+]
 
 ## 🚀 Stretch Features
 
