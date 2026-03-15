@@ -6,7 +6,7 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 
 - What did the game look like the first time you ran it?
 - List at least two concrete bugs you noticed at the start  
-  (for example: "the secret number kept changing" or "the hints were backwards").
+  (for example: "the hints were backwards").
 
 ---
 What immediately stood out was the inconsistent ranges and attempts allowed for the difficulty ranges, the guesses allowed that were outside of the accepted range, and the incorrect hint. For the first bug I expected the ranges to increase as the difficulty increased and the attempts to decrease as the difficulty increased. For the guesses I expected an error to appear if a value fell outside of the high and low range. For the hint, I expected it to guide you closer to the number, but it kept guiding you incorrectly by telling you "go lower" or "go higher" in the wrong moments.
@@ -33,9 +33,7 @@ I came up with a set of test cases that I can test in both pytest and the actual
 
 ## 4. What did you learn about Streamlit and state?
 
-- In your own words, explain why the secret number kept changing in the original app.
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
-- What change did you make that finally gave the game a stable secret number?
 
 ---
 The secret number was not stored between states using session state, so in instances where a new state was created, for example when the difficulty was switched, the secret was regenerated. Every time the user interacts with the app, the entire app's script is rerun entirely, and the variables reset, therefore this was causing our problem. Session state allows for variables to persist between reruns by using a dictionary to store variables that we want to keep consistent. I stored the secret number within this session state dictionary in order for the secret to persist. 
