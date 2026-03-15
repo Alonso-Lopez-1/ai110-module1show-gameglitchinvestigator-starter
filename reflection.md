@@ -9,6 +9,8 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
   (for example: "the secret number kept changing" or "the hints were backwards").
 
 ---
+What immediately stood out was the inconsistent ranges and attempts allowed for the difficulty ranges, the guesses allowed that were outside of the accepted range, and the incorrect hint. For the first bug I expected the ranges to increase as the difficulty increased and the attempts to decrease as the difficulty increased. For the guesses I expected an error to appear if a value fell outside of the high and low range. For the hint, I expected it to guide you closer to the number, but it kept guiding you incorrectly by telling you "go lower" or "go higher" in the wrong moments.
+
 
 ## 2. How did you use AI as a teammate?
 
@@ -17,6 +19,7 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
 
 ---
+I utilized claude code for this project. One example of an AI suggestion that was correct was the suggestion that was made to modify the parse_guess function to validate if a value falls within the current range. It suggested that I include a check for if the value is less than low or greater than high. I validated this by running the game and checking with invalid inputs, as well as creating pytests. I received one incorrect suggestion where the AI indicated that the streamlit had a function named st.form() that basically batches all the widget changes and only submits when the form button is pressed. This function was supposed to fix a bug where the history does not append the most recently submitted guess, however after implementing this function the bug stayed the same. I verified this by running the game again and testing with verious inputs.
 
 ## 3. Debugging and testing your fixes
 
@@ -26,6 +29,7 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - Did AI help you design or understand any tests? How?
 
 ---
+I came up with a set of test cases that I can test in both pytest and the actual game and confirmed the correct behavior. I ran the test for values outside of the allowed ranges manually and in pytest. It showed me that there are many edge cases that must be considered to confirm good logic design. AI mainly helped me understand why the issue was present and the different areas in which I could create a solution. After considering all the possible solutions, I went with the one I felt was the cleanest.
 
 ## 4. What did you learn about Streamlit and state?
 
