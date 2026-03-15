@@ -40,7 +40,8 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📸 Demo
 
-- [ ] [![Alt text]("C:\Users\19092\Pictures\Screenshots\Screenshot 2026-03-14 222002.png")
+- [ ] [![Alt text](![Game screenshot](Screenshots/Screenshot%202026-03-14%20222002.png)
+)
 ]
 
 ## 🚀 Stretch Features
