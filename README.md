@@ -40,9 +40,7 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📸 Demo
 
-- [ ] [![Alt text](![Game screenshot](Screenshots/Screenshot%202026-03-14%20222002.png)
-)
-]
+![Completed Game](Screenshots/Screenshot%202026-03-14%20222002.png)
 
 ## 🚀 Stretch Features
 
